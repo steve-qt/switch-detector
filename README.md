@@ -1,4 +1,4 @@
-# switch-detector
+## switch-detector
 
 This project is to detect whether cables are plugged into switch or not using yolov5.
 It includes two main parts:
@@ -9,13 +9,13 @@ It includes two main parts:
 
 --------Training prediction model on google colab with GPU--------
 
-(1) Prepare the dataset on roboflow (assign, annotate and augment)
++ Prepare the dataset on roboflow (assign, annotate and augment)
 	https://app.roboflow.com/steven-luong-gp8uk/switch-detector/4
 
-(2) Training model on google colab:
++ Training model on google colab:
 	https://colab.research.google.com/drive/16o7OXcuMQxIjHY0FHYYOA8VPKJ4WXmxX?usp=sharing
 
-(3) Download and save the weight(in this case, it's the "best.pt")
++ Download and save the weight(in this case, it's the "best.pt")
 
 
 --------Switch Detecting on local---------------------
