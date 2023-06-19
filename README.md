@@ -3,7 +3,6 @@
 This project is to detect whether cables are plugged into switch or not using yolov5.
 It includes two main parts:
 
-
 --------Training prediction model on google colab with GPU--------
 (or download the weight from https://drive.google.com/file/d/1z9ZDBfH0jZ788XttENy271ZfH2Ccq5ZO/view?usp=sharing)
 
@@ -15,21 +14,18 @@ It includes two main parts:
 
 + Download and save the weight(in this case, it's the "best.pt")
 
+---------------Converting from yolov5 to openvino (optional)-----
 
---------Switch Detecting on local---------------------
+ py export.py --weights .\best.pt --include torchscript onnx
 
-+ Clone yolov5 from git:
-	git clone https://github.com/ultralytics/yolov5  # clone
-	cd yolov5
-	pip install -r requirements.txt  # install
+---------------------Detecting on local--------------------------
++ Run the detector with your choice of weight (either .pt or .onnx)
 
-+ Copy the best.pt to yolov5 directory
+	with video "switch-sample.mov": 
+	
+		python detect.py --agnostic --weights best.pt --img 640 --source switch-sample.mov --conf 0.5 --iou 0.65
 
-+ Run the detector
-
-with video "switch-sample.mov": 
-	python detect.py --agnostic --weights best.pt --img 416 --source switch-sample.mov --conf 0.5 --iou 0.65
-
-with rstp:
-	python detect.py --agnostic --weights best.pt --img 416 --source <rtsp-link> --conf 0.5 --iou 0.65
+	with rstp:
+		
+		python detect.py --agnostic --weights best.pt --img 640 --source <rtsp-link> --conf 0.5 --iou 0.65
 
