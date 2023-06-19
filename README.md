@@ -16,7 +16,9 @@ It includes two main parts:
 
 ---------------Converting from yolov5 to openvino (optional)-----
 
- py export.py --weights .\best.pt --include torchscript onnx
+ 		
+		py export.py --weights .\best.pt --include torchscript onnx
+
 
 ---------------------Detecting on local--------------------------
 + Run the detector with your choice of weight (either .pt or .onnx)
