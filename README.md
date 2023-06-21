@@ -34,7 +34,8 @@ In yolov5:
  		
 		py export.py --weights .\best.pt --include torchscript onnx
 
-
+		mo --input_model .\best.onnx
+   
 ---------------------Detecting on local--------------------------
 + Run the detector with your choice of weight (either .pt or .onnx)
 
